@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cre8Learn Institute | C5-OSH-11 Full Worked Reference</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#e8f1fb;color:#1a1a1a;font:16px/1.65 Georgia,"Times New Roman",serif}
+.wrap{max-width:960px;margin:0 auto;background:#ffffff;border-top:8px solid #0b4d8c;padding:34px 40px 50px}
+header{text-align:center;border-bottom:2px solid #0b4d8c;padding-bottom:18px;margin-bottom:24px}
+.brand{font:700 13px "Courier New",monospace;letter-spacing:4px;color:#0b4d8c}
+h1{font-size:27px;line-height:1.25;margin:8px 0 4px;color:#0b4d8c}
+.sub{color:#333;font-style:italic;margin:0}
+.by{margin:14px 0 0;font-size:14.5px}
+h2{font-size:21px;margin:40px 0 6px;padding:6px 12px;background:#0b4d8c;color:#fff;border-radius:3px}
+h3{font-size:17px;margin:26px 0 4px;color:#0b4d8c;border-bottom:1px solid #b8d4f0;padding-bottom:3px}
+h4{font-size:15px;margin:18px 0 2px;color:#0b4d8c}
+p,li{max-width:74ch}
+.box{background:#f4f9ff;border:1px solid #b8d4f0;border-left:4px solid #0b4d8c;padding:12px 18px;margin:14px 0}
+.stop{border-left-color:#b3261e;background:#fff5f4}
+pre{background:#0d1b2a;color:#b3e5fc;padding:12px 16px;border-radius:4px;overflow-x:auto;font:12.5px/1.55 "Courier New",Courier,monospace;margin:8px 0 12px;white-space:pre}
+code{font:13px "Courier New",monospace;background:#e3f0fb;color:#0b4d8c;padding:1px 5px;border-radius:3px}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:600px;margin:8px 0 14px}
+th,td{border:1px solid #b8d4f0;padding:7px 10px;text-align:left;vertical-align:top}
+th{background:#d6e6f7;color:#0b4d8c}
+.m{display:inline-block;background:#0b4d8c;color:#fff;border-radius:10px;padding:0 10px;font:13px "Courier New",monospace;margin-left:8px;vertical-align:middle}
+.tag{display:inline-block;background:#0b4d8c;color:#fff;font:11px "Courier New",monospace;letter-spacing:2px;padding:2px 8px;border-radius:3px;margin-left:6px;vertical-align:middle}
+footer{margin-top:44px;padding-top:16px;border-top:2px solid #0b4d8c;text-align:center;font:12px "Courier New",monospace;color:#555}
+@media(max-width:700px){.wrap{padding:22px 16px 40px}h1{font-size:22px}}
+@media print{body{background:#fff}.wrap{border:0;padding:0}pre{white-space:pre-wrap}h2{background:#0b4d8c;color:#fff}h1,h3,h4{color:#0b4d8c}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="brand">CRE8LEARN INSTITUTE</div>
+<h1>C5-OSH-11 Operating Systems and Hardware<br>Full Worked Reference</h1>
+<p class="sub">Consultancy report: 800 users, 7 buildings, 15 workstations, 3 printers, wired and wireless</p>
+<p class="by"><b>Instructor:</b> Teboho Mpholo (Mr.), Founder and Lead Instructor<br>End Assessment: deadline 7 November 2026, Turnitin only<br><b>Total:</b> 100 marks (80 for Questions 1 to 8, 10 for Harvard referencing, 10 for formatting)</p>
+</header>
+
+<div class="box stop"><b>Read first.</b> This page is a <b>structure and technique</b> reference, not a report to copy. It shows what an A-grade answer does at each question, the tables an examiner expects, the evidence that earns practical marks, and the traps that cost marks every year. Your own scenario numbers, your own screenshots, your own prose and your own references are what earn the marks. Near-identical submissions are referred. The paper states AI tools are not allowed, so use this page the way you would use a lecturer's worked example: read it, close it, then write.</div>
+
+<h2>How the 100 marks are actually won</h2>
+
+<div class="tw"><table>
+<tr><th>Question</th><th>Marks</th><th>Command verb</th><th>What the examiner is really testing</th></tr>
+<tr><td>Q1 Introduction</td><td>8</td><td>Explain, discuss</td><td>Can you define the four domains and connect them to <b>this</b> scenario, not a textbook definition dump</td></tr>
+<tr><td>Q2 Hardware</td><td>10</td><td>Identify, evaluate, recommend</td><td>Two options compared per component, a recommendation with four-criteria justification, a real BOM</td></tr>
+<tr><td>Q3 Software and protocols</td><td>10</td><td>Evaluate, recommend</td><td>Three operating systems compared, licensing, IP plan, protocols, compatibility</td></tr>
+<tr><td>Q4 Non-functional</td><td>8</td><td>Evaluate</td><td>Four qualities, each with a metric and a number</td></tr>
+<tr><td>Q5 Constraints and troubleshooting</td><td>12</td><td>Identify, evaluate, develop</td><td>Two causes per fault, a systematic diagnostic path, tools justified</td></tr>
+<tr><td>Q6 Integrated design</td><td>12</td><td>Develop, explain</td><td>A labelled diagram that matches the earlier answers, plus a scale argument for 800 users</td></tr>
+<tr><td>Q7 Security design</td><td>10</td><td>Design, implement, evaluate</td><td>Three controls <b>actually implemented</b> with labelled screenshots, plus training</td></tr>
+<tr><td>Q8 Password policy</td><td>10</td><td>Develop, justify, evaluate</td><td>Four account classes, every rule justified, weak-policy comparison, usability trade-off</td></tr>
+<tr><td>Harvard</td><td>10</td><td>Apply</td><td>At least 8 sources, in-text and list matching, books and white papers present</td></tr>
+<tr><td>Formatting</td><td>10</td><td>Apply</td><td>Times New Roman 12, justified, 1.15 spacing, TOC, page numbers, labelled evidence</td></tr>
+</table></div>
+
+<div class="box"><b>The single biggest mark-loser on this paper</b> is a report that describes generic hardware and generic networks without ever returning to the numbers in the scenario. Every heading below has a "scenario anchor" line: a sentence that ties the discussion to 800 users, 7 buildings, 15 workstations or 3 printers. If a paragraph could sit inside any student's report, it earns nothing.</div>
+
+<h2>Report scaffolding before you answer anything</h2>
+
+<h3>Cover page (compulsory, per instruction 2)</h3>
+
+<div class="tw"><table>
+<tr><th>Element</th><th>Example wording</th></tr>
+<tr><td>Faculty</td><td>Faculty of Engineering and Technology</td></tr>
+<tr><td>Department</td><td>Department of Information Technology</td></tr>
+<tr><td>Module name and code</td><td>Operating Systems and Hardware, C5-OSH-11</td></tr>
+<tr><td>Title of work</td><td>Design and Implementation of an Integrated IT Solution for Botho University and the StartUp Hub: Hardware, Operating Systems, Wired and Wireless Networking, and Security</td></tr>
+<tr><td>Student ID</td><td>Your number, nothing else</td></tr>
+<tr><td>Lecturer</td><td>Your lecturer's name as it appears on the module outline</td></tr>
+<tr><td>Date</td><td>Submission date, on or before 7 November 2026</td></tr>
+</table></div>
+
+<h3>Structure and numbering</h3>
+
+<p>Use the question numbers exactly. A report whose headings read <code>1.0 Introduction</code>, <code>2.0 Hardware</code> and so on is easy for a marker to tick against the mark sheet. Suggested depth:</p>
+
+<pre>Cover page
+Table of contents (with page numbers)
+List of figures and tables
+List of abbreviations
+1. Introduction to wireless networks, operating systems and hardware   [Q1]
+   1.1 Wireless networking and network communication
+   1.2 Operating systems in the university environment
+   1.3 Computer hardware and its role
+   1.4 Why a hybrid wired and wireless design is required
+2. Evaluation of hardware requirements                                  [Q2]
+   2.1 Component comparisons
+   2.2 Recommendations with justification
+   2.3 Bill of materials
+3. Evaluation of software, operating systems and protocols              [Q3]
+   3.1 Operating system comparison
+   3.2 Licensing
+   3.3 IP addressing plan
+   3.4 Network protocols
+   3.5 Compatibility
+4. Evaluation of non-functional requirements                            [Q4]
+   4.1 Reliability  4.2 Availability  4.3 Security  4.4 Performance
+   4.5 Metrics summary
+5. Constraints, limitations and troubleshooting                         [Q5]
+   5.1 Constraints and their effects
+   5.2 Troubleshooting methodology
+   5.3 Fault tables (hardware, OS, network, printing)
+6. Integrated network and system design                                 [Q6]
+   6.1 Design principles and topology
+   6.2 Logical design: VLANs and IP plan
+   6.3 Physical design: cabling and devices
+   6.4 Network diagram
+   6.5 How the design supports 800 mobile users
+7. Secure environment design and user training                          [Q7]
+   7.1 Threat model
+   7.2 Controls implemented (with screenshots)
+   7.3 Evaluation of each control
+   7.4 User training programme
+8. Password policy design and justification                             [Q8]
+   8.1 Account classes
+   8.2 Policy rules and justification
+   8.3 Weak policy comparison
+   8.4 Usability evaluation
+9. Conclusion
+References (Harvard)
+Appendices (full screenshots, configuration extracts, BOM spreadsheet)</pre>
+
+<div class="box"><b>Keep the appendices lean.</b> Appendices are for full-page screenshots and configuration dumps that would break the flow. The <b>labelled figure in the body</b> is what gets marked. A screenshot that only exists in an appendix and is never referred to in the text is usually not marked at all.</div>
+
+<h2>Question 1: Introduction to wireless networks, operating systems and hardware <span class="m">8 marks</span></h2>
+
+<p><b>What is required:</b> introduce wireless networks, network communication, operating systems and computer hardware; explain why the university needs both wired and wireless for about 800 mobile users across seven buildings; discuss how selected hardware and operating systems support the computing and networking requirements.</p>
+
+<h3>Model answer skeleton</h3>
+
+<div class="tw"><table>
+<tr><th>Subsection</th><th>Content to cover</th><th>Scenario anchor to include</th></tr>
+<tr><td>1.1 Wireless networking</td><td>WLAN defined by IEEE 802.11; radio bands 2.4, 5 and 6 GHz; CSMA/CA rather than CSMA/CD; channels and co-channel interference; standards from 802.11n to 802.11ax (Wi-Fi 6); the role of access points, SSIDs, roaming and authentication (WPA3, 802.1X)</td><td>Staff move between seven buildings, so the design must support <b>roaming</b> without dropping sessions; dense urban spectrum means 5 GHz and 6 GHz planning, not 2.4 GHz alone</td></tr>
+<tr><td>1.1 Network communication</td><td>OSI and TCP/IP models; encapsulation; switching at layer 2 and routing at layer 3; the difference between a broadcast domain and a collision domain; latency, throughput and jitter as the three numbers that matter</td><td>Seven buildings require <b>layer 3 separation</b> (VLANs and subnets) while still appearing as one campus to the user</td></tr>
+<tr><td>1.2 Operating systems</td><td>Kernel, drivers, process and memory management, file systems, user and permission model; the difference between a desktop OS and a server OS; why driver support decides whether a workstation build succeeds</td><td>The 15 StartUp Hub workstations arrive with <b>no OS and no drivers</b>, so OS selection and driver availability are a procurement decision, not an afterthought</td></tr>
+<tr><td>1.3 Hardware</td><td>CPU cores and threads; RAM capacity and speed; storage type and interface (SATA, NVMe); NIC speed; power supply sizing; thermal design; form factor</td><td>800 staff need portable devices; the 15 workstations are fixed build units; three printers need network interfaces and memory</td></tr>
+<tr><td>1.4 Why hybrid</td><td>Wireless gives mobility and lower cabling cost per seat; wired gives deterministic bandwidth, PoE, lower latency and building-to-building backhaul. Neither alone meets the requirement</td><td>Quantify: 800 users, assume 1.5 to 2 devices each, so roughly <b>1200 to 1600 concurrent devices</b>, which no single wireless-only design carries reliably across seven buildings</td></tr>
+</table></div>
+
+<div class="box"><b>The paragraph that earns the top band.</b> Do not simply say "wireless is convenient and wired is fast". Say: the seven buildings are joined by <b>wired fibre backhaul</b> because no wireless bridge can carry aggregate inter-building traffic reliably in a dense urban spectrum; inside each building, <b>Wi-Fi 6 access points</b> carry the mobile devices; and <b>wired access ports</b> are retained for fixed devices that need PoE or deterministic bandwidth (printers, APs, desk phones, the 15 workstations). That three-layer argument (backhaul, wireless access, wired access) is what separates an 8 from a 5.</div>
+
+<h4>Evidence and figures for Q1</h4>
+<ul>
+<li>Figure 1.1: the OSI model mapped to the devices in this scenario (switch at layer 2, router and firewall at layer 3, AP at layer 2 with a layer 3 management address).</li>
+<li>Figure 1.2: a simple before-and-after of the current leased line versus the proposed owned infrastructure.</li>
+<li>Table 1.1: comparison of 2.4, 5 and 6 GHz bands (range, channels, interference, best use in this campus).</li>
+</ul>
+
+<h2>Question 2: Evaluation of hardware requirements <span class="m">10 marks</span></h2>
+
+<p><b>What is required:</b> identify and evaluate the main hardware components for the 15 workstations and the network infrastructure across seven buildings; for each major component, compare two suitable options; recommend with justification on cost, performance, reliability and compatibility; include a Bill of Materials with quantities.</p>
+
+<h3>Component comparisons</h3>
+
+<div class="tw"><table>
+<tr><th>Component</th><th>Option A</th><th>Option B</th><th>Recommendation for this scenario</th></tr>
+<tr><td>RAM</td><td>8 GB DDR4-3200</td><td>16 GB DDR4-3200 (2 x 8 GB, dual channel)</td><td><b>16 GB.</b> Windows 11 plus a browser with 20 tabs plus Teams exceeds 8 GB in normal use; 8 GB forces paging to disk, which is felt as slowness. Dual channel also raises effective bandwidth. The extra cost is small relative to a rebuild in year two.</td></tr>
+<tr><td>Storage</td><td>1 TB 7200 rpm HDD, SATA</td><td>512 GB NVMe SSD, PCIe 4.0</td><td><b>512 GB NVMe SSD.</b> Sequential reads of roughly 3000 MB/s against roughly 150 MB/s; boot time and application launch improve by an order of magnitude. Reliability also favours SSD in a portable device because there are no moving parts to survive a drop.</td></tr>
+<tr><td>CPU</td><td>Entry 4-core, 4-thread</td><td>Mid-range 6-core, 12-thread</td><td><b>6-core, 12-thread.</b> The device must last a four-year refresh cycle and run OS updates, endpoint protection and a browser concurrently. Four threads is already the bottleneck on a modern desktop.</td></tr>
+<tr><td>Network interface</td><td>Gigabit Ethernet only</td><td>Gigabit Ethernet plus Wi-Fi 6 (802.11ax) with WPA3</td><td><b>Both.</b> The device must work on a desk and on the move; a laptop with only Wi-Fi cannot be imaged reliably over the wire, and a desktop with only Ethernet cannot serve a mobile user.</td></tr>
+<tr><td>Access points</td><td>Wi-Fi 5 (802.11ac), 2x2, WPA2</td><td>Wi-Fi 6 (802.11ax), 4x4, WPA3, PoE+</td><td><b>Wi-Fi 6.</b> OFDMA and MU-MIMO serve many devices per radio, which is exactly the 800-user density problem; BSS colouring reduces co-channel interference in a dense urban block; WPA3 removes the offline dictionary attack against WPA2 handshakes.</td></tr>
+<tr><td>Access switches</td><td>24-port Gigabit, non-PoE, unmanaged</td><td>24-port Gigabit, PoE+, managed, with 10G uplinks</td><td><b>Managed PoE+.</b> APs need power over the same cable; VLANs and 802.1X require a managed switch; 10G uplinks stop the uplink becoming the bottleneck at each building.</td></tr>
+<tr><td>Core and edge</td><td>Single core switch, single firewall</td><td>Two core switches in a stack or MLAG pair, firewall pair</td><td><b>Redundant pair.</b> A single core failure isolates an entire building; the cost of one spare device is small against the cost of a campus outage.</td></tr>
+<tr><td>Inter-building link</td><td>Wireless point-to-point bridge</td><td>Single-mode fibre with SFP modules</td><td><b>Fibre.</b> Deterministic bandwidth, immune to weather and spectrum contention, and supports 10G or 40G later without recabling. Wireless bridges are acceptable only as a temporary measure.</td></tr>
+<tr><td>Power protection</td><td>None</td><td>UPS per building on core and access switches</td><td><b>UPS.</b> Protects configuration and file integrity against brownouts, which are common in urban distribution networks, and keeps PoE APs alive during short outages.</td></tr>
+</table></div>
+
+<div class="box"><b>How to write the justification so it scores.</b> Use four labelled criteria for every recommendation: <b>cost</b> (capital and four-year total), <b>performance</b> (a number, not an adjective), <b>reliability</b> (MTBF, warranty, moving parts), <b>compatibility</b> (does it work with Windows 11 Pro, with PoE budget, with the existing 802.1X design). A recommendation that cites only cost is a half answer.</div>
+
+<h3>Bill of Materials (indicative, BWP, 2026)</h3>
+
+<p>State your assumptions before the table. The examiner accepts any reasonable assumption if it is written down.</p>
+
+<div class="box"><b>Stated assumptions.</b> 800 staff, average 1.5 devices each, about 1200 concurrent devices at peak. Seven buildings, average four floors, average floor area 600 m squared. One AP per 30 to 35 concurrent devices at Wi-Fi 6 density, giving roughly 40 to 45 APs plus 15 percent spare. One 24-port PoE+ access switch per 8 APs plus wired ports, so two per building plus one spare. The 15 StartUp Hub workstations are build units and need RAM, storage, CPU, PSU, case and OS. The three printers are already purchased and need network configuration only.</div>
+
+<div class="tw"><table>
+<tr><th>#</th><th>Item</th><th>Specification</th><th>Qty</th><th>Unit (BWP)</th><th>Total (BWP)</th></tr>
+<tr><td>1</td><td>Staff laptop</td><td>14 inch, 6-core, 16 GB, 512 GB NVMe, Wi-Fi 6E, WPA3, TPM 2.0</td><td>800</td><td>9 500</td><td>7 600 000</td></tr>
+<tr><td>2</td><td>StartUp Hub workstation CPU</td><td>6-core, 12-thread, socket AM5</td><td>15</td><td>1 800</td><td>27 000</td></tr>
+<tr><td>3</td><td>Workstation motherboard</td><td>AM5, DDR4, M.2, Gigabit LAN</td><td>15</td><td>1 200</td><td>18 000</td></tr>
+<tr><td>4</td><td>Workstation RAM</td><td>16 GB DDR4-3200 (2 x 8 GB)</td><td>15</td><td>650</td><td>9 750</td></tr>
+<tr><td>5</td><td>Workstation storage</td><td>512 GB NVMe SSD</td><td>15</td><td>750</td><td>11 250</td></tr>
+<tr><td>6</td><td>Workstation PSU and case</td><td>450 W 80+ Bronze, mid tower</td><td>15</td><td>900</td><td>13 500</td></tr>
+<tr><td>7</td><td>Wi-Fi 6 access point</td><td>4x4, PoE+, WPA3-Enterprise, 802.1X</td><td>50</td><td>3 200</td><td>160 000</td></tr>
+<tr><td>8</td><td>Access switch</td><td>24-port Gigabit PoE+, 2 x 10G SFP+, managed</td><td>16</td><td>8 500</td><td>136 000</td></tr>
+<tr><td>9</td><td>Core switch pair</td><td>48-port 10G, MLAG, layer 3</td><td>2</td><td>45 000</td><td>90 000</td></tr>
+<tr><td>10</td><td>Edge firewall pair</td><td>HA pair, IPS, VPN, content filtering</td><td>2</td><td>38 000</td><td>76 000</td></tr>
+<tr><td>11</td><td>Wireless LAN controller</td><td>On-premise or cloud-managed, 100 AP licence</td><td>1</td><td>40 000</td><td>40 000</td></tr>
+<tr><td>12</td><td>Inter-building fibre</td><td>Single-mode, 12-core, per metre installed</td><td>2 500 m</td><td>180</td><td>450 000</td></tr>
+<tr><td>13</td><td>SFP modules</td><td>10G LR single-mode</td><td>28</td><td>1 400</td><td>39 200</td></tr>
+<tr><td>14</td><td>Cat 6A cabling and patch panels</td><td>Per building, installed</td><td>7</td><td>25 000</td><td>175 000</td></tr>
+<tr><td>15</td><td>UPS</td><td>3 kVA rack, per building</td><td>8</td><td>12 000</td><td>96 000</td></tr>
+<tr><td>16</td><td>Server, directory and DNS</td><td>2 x 16-core, 64 GB, RAID 10 SSD</td><td>2</td><td>60 000</td><td>120 000</td></tr>
+<tr><td>17</td><td>Server, file and print</td><td>1 x 12-core, 32 GB, RAID 10 SSD</td><td>1</td><td>45 000</td><td>45 000</td></tr>
+<tr><td>18</td><td>Backup NAS</td><td>24 TB usable, RAID 6</td><td>1</td><td>55 000</td><td>55 000</td></tr>
+<tr><td>19</td><td>Windows 11 Pro licence</td><td>Per device, OEM with laptop</td><td>800</td><td>0</td><td>0</td></tr>
+<tr><td>20</td><td>Windows 11 Pro licence, workstations</td><td>Retail or volume</td><td>15</td><td>1 600</td><td>24 000</td></tr>
+<tr><td colspan="5"><b>Indicative total</b></td><td><b>9 141 900</b></td></tr>
+</table></div>
+
+<div class="box"><b>Two BOM details that earn marks.</b> First, a <b>10 to 15 percent contingency line</b> and a <b>spares line</b> (one spare AP per building, one spare switch) show operational realism. Second, a note that the fibre and Cat 6A figures are <b>installed</b> costs including labour and containment, because hardware-only pricing understates a real project by a large margin. Both notes are one sentence and both move you up a band.</div>
+
+<h4>Evidence and figures for Q2</h4>
+<ul>
+<li>Table 2.1: the component comparison above, presented as a scored matrix (cost 1 to 5, performance 1 to 5 and so on) with weights. A weighted matrix is the strongest single artefact in this question.</li>
+<li>Table 2.2: the BOM.</li>
+<li>Figure 2.1: a photograph of the <b>first StartUp Hub workstation you actually assembled</b>, with RAM and NVMe visible, labelled.</li>
+<li>Figure 2.2: screenshot of the BIOS or UEFI screen showing the detected RAM capacity and the NVMe drive, which proves the build matches the BOM.</li>
+</ul>
+
+<h2>Question 3: Evaluation of software, operating systems and network protocols <span class="m">10 marks</span></h2>
+
+<p><b>What is required:</b> evaluate software, operating systems and network protocols; compare Windows 11 Pro, Ubuntu 24.04 LTS and ChromeOS Flex for suitability; recommend an OS for 800 users with justification; address licensing, IP addressing, protocols and compatibility.</p>
+
+<h3>Operating system comparison</h3>
+
+<div class="tw"><table>
+<tr><th>Criterion</th><th>Windows 11 Pro</th><th>Ubuntu 24.04 LTS</th><th>ChromeOS Flex</th></tr>
+<tr><td>Management at scale</td><td>Active Directory, Group Policy, Intune, Defender; mature and well understood by most IT staff</td><td>Landscape, Ansible, Puppet; excellent for servers, weaker for a mixed desktop fleet</td><td>Google Admin console; zero-touch enrolment; very low admin effort but cloud-bound</td></tr>
+<tr><td>Application compatibility</td><td>Highest; Office, finance systems, lab software, legacy Botswana-specific tools</td><td>LibreOffice, browser apps, many line-of-business tools missing or requiring Wine</td><td>Web apps only; no local heavy applications; some legacy tools unavailable</td></tr>
+<tr><td>Security features</td><td>BitLocker, Credential Guard, Secure Boot, TPM 2.0, Defender, AppLocker</td><td>LUKS, AppArmor, Secure Boot, strong server security; fewer desktop management hooks</td><td>Verified boot, sandboxing, encrypted by default; limited local data</td></tr>
+<tr><td>Licensing cost</td><td>Per device, OEM or volume; Windows Server CALs and Client Access Licensing separate</td><td>Free; Ubuntu Pro for extended security maintenance</td><td>Free; Chrome Enterprise Upgrade per device for management</td></tr>
+<tr><td>Hardware requirement</td><td>TPM 2.0, 4 GB minimum, 64 GB storage, UEFI Secure Boot; excludes some older devices</td><td>Modest; 4 GB and 25 GB storage; excellent on older hardware</td><td>Modest; certified device list; older hardware often supported</td></tr>
+<tr><td>User familiarity</td><td>Very high among administrative staff</td><td>Low among non-technical staff; training cost</td><td>High for browser users; low for anything else</td></tr>
+<tr><td>Best fit here</td><td>800 staff laptops and the 15 workstations</td><td>Servers: directory, DNS, DHCP, file, RADIUS, print, backup</td><td>Kiosks, reception, shared access points in the StartUp Hub</td></tr>
+</table></div>
+
+<div class="box"><b>The recommendation that scores.</b> Do not force a single OS on every device. Recommend <b>Windows 11 Pro for the 800 staff laptops and the 15 workstations</b>, because management at scale through AD and Intune, application compatibility and staff familiarity outweigh the licence cost; recommend <b>Ubuntu Server 24.04 LTS for the server tier</b>, because it is free, stable, well supported and ideal for DNS, DHCP, RADIUS and print; and recommend <b>ChromeOS Flex for shared kiosk devices</b> in reception and the StartUp Hub, where no local data is needed and the management overhead is near zero. Then justify the <b>primary</b> choice explicitly, because the question asks for it. A single-OS answer is defensible; a mixed answer that explains why each tier gets what it gets is stronger.</div>
+
+<h3>Licensing requirements</h3>
+
+<div class="tw"><table>
+<tr><th>Item</th><th>Licence model</th><th>Note for this deployment</th></tr>
+<tr><td>Windows 11 Pro</td><td>OEM per device, or volume licensing with Software Assurance</td><td>800 laptops, 15 workstations; Pro is required, Home cannot join a domain</td></tr>
+<tr><td>Windows Server</td><td>Per core plus Client Access Licences (CALs)</td><td>Two domain controllers, one file and print server; 800 user CALs</td></tr>
+<tr><td>Ubuntu Server</td><td>Free; optional Ubuntu Pro for extended security maintenance</td><td>No per-seat cost; support contract optional</td></tr>
+<tr><td>ChromeOS Flex</td><td>Free; Chrome Enterprise Upgrade per device for management</td><td>Only the kiosk fleet needs the upgrade</td></tr>
+<tr><td>Endpoint protection</td><td>Per device subscription</td><td>800 plus 15 devices, plus servers</td></tr>
+</table></div>
+
+<h3>IP addressing plan</h3>
+
+<p>Use RFC 1918 private space, one subnet per VLAN, with a documented plan rather than ad hoc allocation. A <code>10.20.0.0/16</code> campus block gives room for seven buildings and future growth.</p>
+
+<div class="tw"><table>
+<tr><th>VLAN</th><th>Name</th><th>Subnet</th><th>Gateway</th><th>Purpose</th></tr>
+<tr><td>10</td><td>MGMT</td><td>10.20.10.0/24</td><td>10.20.10.1</td><td>Switches, APs, controller, iDRAC and iLO</td></tr>
+<tr><td>20</td><td>STAFF</td><td>10.20.20.0/22</td><td>10.20.20.1</td><td>800 staff devices, DHCP</td></tr>
+<tr><td>30</td><td>HUB</td><td>10.20.30.0/24</td><td>10.20.30.1</td><td>15 workstations and StartUp Hub devices</td></tr>
+<tr><td>40</td><td>VOICE</td><td>10.20.40.0/24</td><td>10.20.40.1</td><td>IP phones, QoS marked</td></tr>
+<tr><td>50</td><td>PRINT</td><td>10.20.50.0/24</td><td>10.20.50.1</td><td>Three printers, static reservations</td></tr>
+<tr><td>60</td><td>GUEST</td><td>10.20.60.0/24</td><td>10.20.60.1</td><td>Visitors, internet only, client isolation</td></tr>
+<tr><td>70</td><td>SERVERS</td><td>10.20.70.0/24</td><td>10.20.70.1</td><td>Domain controllers, file, print, RADIUS</td></tr>
+<tr><td>80</td><td>IOT</td><td>10.20.80.0/24</td><td>10.20.80.1</td><td>Cameras, door access, building systems</td></tr>
+<tr><td>99</td><td>QUARANTINE</td><td>10.20.99.0/24</td><td>10.20.99.1</td><td>Devices failing 802.1X or posture check</td></tr>
+</table></div>
+
+<div class="box"><b>Say why the size varies.</b> STAFF is a /22 because 800 devices plus phones plus headroom exceeds a /24. Every other VLAN is a /24 because the device count is bounded. Printers get <b>static reservations in DHCP</b>, not manually typed addresses, so a replacement printer needs one record change and not a site visit. APs and switches are static in MGMT because they must be reachable when DHCP is down. That reasoning is the mark.</div>
+
+<h3>Network protocols</h3>
+
+<div class="tw"><table>
+<tr><th>Protocol</th><th>Purpose here</th><th>Why it matters in this scenario</th></tr>
+<tr><td>DHCP</td><td>Address assignment, reservations, options 66 and 67 for imaging</td><td>800 devices cannot be configured manually; reservations keep printers stable</td></tr>
+<tr><td>DNS</td><td>Name resolution, AD-integrated zones, forwarders</td><td>AD depends on correct DNS; a wrong forwarder breaks internet name resolution campus-wide</td></tr>
+<tr><td>NTP</td><td>Time synchronisation across switches, servers, APs</td><td>Kerberos tolerates only five minutes of clock skew; wrong time breaks domain logon</td></tr>
+<tr><td>LDAP and Kerberos</td><td>Directory authentication</td><td>The single sign-on foundation for 800 staff</td></tr>
+<tr><td>RADIUS with 802.1X</td><td>WPA3-Enterprise and switch port authentication</td><td>Stops a rogue device joining the staff SSID with a shared key</td></tr>
+<tr><td>HTTPS and TLS</td><td>Management interfaces, web apps</td><td>Management traffic must never travel in clear text</td></tr>
+<tr><td>IPP over TLS</td><td>Printing</td><td>Replaces clear-text raw printing; supports accounting</td></tr>
+<tr><td>SNMPv3</td><td>Monitoring switches, APs, printers</td><td>v3 adds authentication and encryption that v1 and v2c lack</td></tr>
+<tr><td>LLDP</td><td>Neighbour discovery and PoE negotiation</td><td>Makes the physical topology discoverable and speeds fault finding</td></tr>
+<tr><td>RSTP or MSTP</td><td>Loop prevention at layer 2</td><td>Seven buildings with redundant links will loop without it</td></tr>
+<tr><td>OSPF or static routing</td><td>Inter-VLAN and inter-building routing</td><td>Two core switches need a routing protocol that converges quickly</td></tr>
+<tr><td>QoS with DSCP</td><td>Marking voice and video above bulk data</td><td>Protects call quality when 800 users share the WAN</td></tr>
+<tr><td>802.11k, 802.11v, 802.11r</td><td>Fast roaming between APs</td><td>Staff walking between buildings must not drop a call or a Teams session</td></tr>
+</table></div>
+
+<h3>Compatibility</h3>
+
+<p>State three compatibility chains explicitly. First, Windows 11 Pro requires TPM 2.0 and UEFI Secure Boot, so the laptop BOM must include TPM, which in turn affects cost. Second, WPA3-Enterprise requires an OS supplicant that supports it; Windows 11 and Ubuntu 24.04 both do, older Android devices may not, which is why a transitional WPA2-Enterprise SSID may be needed. Third, the three printers must support IPP over TLS and 802.1X, or they must be placed on the PRINT VLAN with MAC authentication bypass rather than full 802.1X. That last point is the kind of practical compatibility detail that lifts the answer.</p>
+
+<h4>Evidence and figures for Q3</h4>
+<ul>
+<li>Table 3.1: the OS comparison matrix, scored and weighted.</li>
+<li>Table 3.2: the IP plan.</li>
+<li>Figure 3.1: screenshot of Windows 11 Pro installed on one of the 15 workstations, showing <code>winver</code> and activation status.</li>
+<li>Figure 3.2: screenshot of Ubuntu 24.04 LTS installed on a server, showing <code>lsb_release -a</code> and <code>uname -r</code>.</li>
+<li>Figure 3.3: DHCP console showing a printer reservation and a staff scope.</li>
+</ul>
+
+<h2>Question 4: Evaluation of non-functional requirements <span class="m">8 marks</span></h2>
+
+<p><b>What is required:</b> evaluate reliability, availability, security and performance; for each, explain how the proposed hardware, operating systems, wired and wireless design meet it; identify metrics such as uptime, network availability, latency, throughput and response time.</p>
+
+<h3>Structure that scores</h3>
+
+<p>Use one subsection per quality, and inside each subsection use the same three-part pattern: <b>definition and target number</b>, <b>design decisions that meet it</b>, <b>metric and how it is measured</b>. Repeating the pattern makes the evaluation easy to mark and shows systematic thinking.</p>
+
+<div class="tw"><table>
+<tr><th>Quality</th><th>Target for this deployment</th><th>Design decisions that meet it</th><th>Metric and measurement</th></tr>
+<tr><td>Reliability</td><td>No single device failure isolates a building; hardware MTBF above 100 000 hours</td><td>Stacked or MLAG core pair; dual PSU in core and servers; RAID 10 on servers; UPS on core and access; fibre ring so a cut cable does not split the campus; spare AP and switch per building</td><td>MTBF and MTTR from vendor data; RAID rebuild tested; number of unplanned outages per term from the incident log</td></tr>
+<tr><td>Availability</td><td>99.9 percent during 07:00 to 18:00, which is about 2.3 hours of downtime per year in working hours</td><td>Redundant core and edge; two domain controllers; DHCP failover; WLC redundancy; dual ISP or LTE failover; scheduled maintenance windows outside teaching hours</td><td>Uptime measured by SNMP polling or a monitoring tool; availability percentage per month; mean time to restore from the helpdesk log</td></tr>
+<tr><td>Security</td><td>No shared wireless key; every device authenticated; data encrypted at rest and in transit</td><td>WPA3-Enterprise with 802.1X and RADIUS; VLAN segmentation with firewall rules between VLANs; BitLocker and LUKS; EDR on endpoints; printer hardening; MFA on administrative access</td><td>Failed authentication attempts per day; percentage of devices passing posture check; patch compliance percentage; number of open critical vulnerabilities</td></tr>
+<tr><td>Performance</td><td>Wired latency under 1 ms to the access switch; wireless latency under 10 ms to the gateway; throughput at least 20 Mbps per active device at peak; response time under 2 s for the student information system</td><td>Wi-Fi 6 with 5 GHz and 6 GHz planning; one AP per 30 to 35 devices; 10G uplinks; QoS for voice; content caching; adequate WAN bandwidth sized from a peak-hour baseline</td><td>Latency and jitter from <code>ping</code> and <code>iperf3</code>; throughput per AP from the controller; response time from an APM tool or a browser timing capture; peak concurrent device count</td></tr>
+</table></div>
+
+<div class="box"><b>The trap in this question.</b> Students write "the network will be reliable because we use good equipment". That is not an evaluation. Every claim needs a <b>number</b> and a <b>measurement method</b>. "Target 99.9 percent availability, measured by SNMP polling of the core pair, reported monthly" is the level required. If you can also show one real measurement from your lab build (a <code>ping</code> showing 0.4 ms to the gateway, an <code>iperf3</code> showing 940 Mbps on a wired port), the answer moves into the top band because it is evidenced, not asserted.</div>
+
+<h4>Evidence and figures for Q4</h4>
+<ul>
+<li>Table 4.1: the four-quality summary above.</li>
+<li>Figure 4.1: screenshot of <code>ping</code> to the gateway from a wired workstation, showing latency.</li>
+<li>Figure 4.2: screenshot of <code>iperf3</code> between two hosts on the same VLAN, showing throughput.</li>
+<li>Figure 4.3: screenshot of the switch or controller dashboard showing AP uptime and client count.</li>
+</ul>
+
+<h2>Question 5: Evaluation of constraints, limitations and troubleshooting <span class="m">12 marks</span></h2>
+
+<p><b>What is required:</b> identify and evaluate constraints and limitations; explain how they affect performance, reliability or access; develop troubleshooting approaches for hardware, operating system, network and printing problems; for each problem give at least two causes, a systematic diagnosis, and a justified tool or technique.</p>
+
+<h3>Part 1: Constraints and limitations</h3>
+
+<div class="tw"><table>
+<tr><th>Constraint</th><th>Effect on performance, reliability or access</th><th>Mitigation to propose</th></tr>
+<tr><td>Budget ceiling</td><td>Forces phasing; some buildings get wireless before wired, so early users have less capacity</td><td>Phase by building, prioritising the highest-density buildings first; publish the phase plan</td></tr>
+<tr><td>Building age and fabric</td><td>No containment routes; asbestos or heritage restrictions block drilling, so some links must be external or wireless</td><td>Survey first; use external armoured fibre and licensed microwave only where cabling is impossible</td></tr>
+<tr><td>Cable length limit of 100 m on copper</td><td>Large floors need intermediate distribution frames or fibre to the floor</td><td>Fibre from the building distribution to each floor, copper only on the last 90 m</td></tr>
+<tr><td>Power and cooling per building</td><td>Adding PoE switches and servers can exceed the electrical supply of an older building</td><td>Calculate the PoE budget and heat load; add a dedicated circuit or a small rack with forced ventilation</td></tr>
+<tr><td>Urban radio spectrum contention</td><td>2.4 GHz is unusable at peak; 5 GHz channels are partially occupied by neighbouring campuses</td><td>Plan on 5 GHz and 6 GHz; site survey; reduce transmit power; use 802.11ax BSS colouring</td></tr>
+<tr><td>Internet bandwidth and leased line cost</td><td>The current leased line is the bottleneck and the reason for the project</td><td>Replace with owned fibre between buildings and a single higher-capacity internet link with LTE failover</td></tr>
+<tr><td>IT staff skills</td><td>A design the team cannot operate becomes unreliable in practice</td><td>Choose well-documented vendors; budget for training; write runbooks</td></tr>
+<tr><td>Downtime windows</td><td>Academic buildings are in use 07:00 to 18:00, so changes must be out of hours</td><td>Change control with a defined window; test on a pilot building first</td></tr>
+<tr><td>Data protection and privacy law</td><td>Monitoring and logging must be lawful and proportionate</td><td>Document the lawful basis; retain logs for a defined period; restrict access to logs</td></tr>
+<tr><td>Legacy applications</td><td>Some finance or registry software may only run on older Windows or with Internet Explorer mode</td><td>Test compatibility before the Windows 11 rollout; keep a small legacy VLAN with restricted internet access if needed</td></tr>
+</table></div>
+
+<h3>Part 2: Troubleshooting approaches</h3>
+
+<p>Use one table per domain, with the same columns every time: symptom, at least two possible causes, systematic diagnostic steps, tools and why they are appropriate. A consistent table format signals method.</p>
+
+<h4>Hardware</h4>
+
+<div class="tw"><table>
+<tr><th>Symptom</th><th>Possible causes (at least two)</th><th>Systematic diagnosis</th><th>Tools and justification</th></tr>
+<tr><td>Workstation does not power on</td><td>(1) PSU failure or wrong voltage selector; (2) front panel switch or motherboard fault; (3) RAM not seated</td><td>Confirm the wall socket with a known good device, swap the PSU, listen for POST beeps, reseat RAM one stick at a time, check the front panel header</td><td>POST beep codes or a POST card: the beep pattern identifies the failing subsystem before any component is swapped, which saves time and avoids damage. Multimeter for the PSU rails.</td></tr>
+<tr><td>Machine powers on but shows no display</td><td>(1) RAM fault; (2) GPU or cable fault; (3) monitor input selected incorrectly</td><td>Test the monitor on another machine, swap the cable, move the RAM to a known good slot, try a single stick</td><td>Known good spare parts, POST codes, minimum configuration test. A systematic swap is faster than guessing.</td></tr>
+</table></div>
+
+<h4>Operating system</h4>
+
+<div class="tw"><table>
+<tr><th>Symptom</th><th>Possible causes</th><th>Diagnosis</th><th>Tools and justification</th></tr>
+<tr><td>Windows fails to boot after an update</td><td>(1) Corrupt system files; (2) failing storage; (3) driver conflict</td><td>Try Safe Mode, run <code>sfc /scannow</code>, then <code>DISM /Online /Cleanup-Image /RestoreHealth</code>, check the SMART status of the SSD, roll back the update</td><td>Safe Mode isolates third-party drivers; <code>sfc</code> and <code>DISM</code> repair the component store; Event Viewer shows the stop code and the failing driver, which turns a guess into a diagnosis</td></tr>
+<tr><td>Application crashes or the machine slows down</td><td>(1) Insufficient RAM so heavy paging; (2) malware; (3) failing disk</td><td>Check Task Manager for memory pressure and disk queue length, run a full antivirus scan, check SMART, review Reliability Monitor</td><td>Task Manager and Resource Monitor give the bottleneck directly; Event Viewer and Reliability Monitor give the timeline. All are built in, so no extra licence.</td></tr>
+</table></div>
+
+<h4>Network</h4>
+
+<div class="tw"><table>
+<tr><th>Symptom</th><th>Possible causes</th><th>Diagnosis</th><th>Tools and justification</th></tr>
+<tr><td>No network connectivity on a wired port</td><td>(1) Cable or patch panel fault; (2) switch port down, disabled or in the wrong VLAN; (3) DHCP failure; (4) 802.1X authentication failing</td><td>Check link lights, run <code>ipconfig /all</code> to see whether an address was obtained, <code>ping</code> the gateway, <code>tracert</code> to an external host, check the switch port status and VLAN, check the RADIUS log for a rejected authentication</td><td><code>ipconfig</code> separates a layer 1 and 2 problem from a layer 3 problem in one step. <code>ping</code> and <code>tracert</code> establish where the path stops. The switch CLI and the RADIUS log give the authoritative answer. A cable tester confirms layer 1.</td></tr>
+<tr><td>Wireless connects but is slow or drops</td><td>(1) Co-channel interference or too few APs; (2) client stuck on 2.4 GHz; (3) roaming misconfiguration; (4) channel width too wide for the density</td><td>Check the client's negotiated band, channel and RSSI, run a site survey, check the controller for channel utilisation and retry rates, test the same location with a known good client</td><td>A site survey tool shows coverage and interference maps, which is the only way to see the radio environment. Controller statistics show retries and airtime utilisation, which distinguish a coverage problem from an interference problem.</td></tr>
+</table></div>
+
+<h4>Printing</h4>
+
+<div class="tw"><table>
+<tr><th>Symptom</th><th>Possible causes</th><th>Diagnosis</th><th>Tools and justification</th></tr>
+<tr><td>Print job stuck in the queue</td><td>(1) Spooler service hung; (2) corrupt job blocking the queue; (3) driver mismatch; (4) printer offline or out of paper</td><td>Check the printer panel first, then the queue, restart the Print Spooler service, clear the spool folder, remove and re-add the printer with the correct driver</td><td>The print spooler is the first suspect because it serialises all jobs: one corrupt job blocks everything behind it. Event Viewer under Applications and Services logs records the spooler error code. Restarting the service is reversible and fast.</td></tr>
+<tr><td>Printer not reachable on the network</td><td>(1) Wrong IP or a DHCP lease change; (2) firewall blocking IPP; (3) printer on the wrong VLAN or failing 802.1X</td><td><code>ping</code> the printer, open its web interface, check the port status and VLAN, check the firewall rule for TCP 631</td><td><code>ping</code> plus the printer's own web page proves whether the device is alive and configured. A static DHCP reservation prevents recurrence, which is why the IP plan in Q3 reserves printer addresses.</td></tr>
+</table></div>
+
+<div class="box"><b>Justify the tool, not just name it.</b> The paper says "justify the use of appropriate troubleshooting tools and techniques". For every tool, one sentence: what it shows that nothing else shows, and why that narrows the fault. "Ping because it is easy" earns nothing. "Ping the gateway because a reply proves layers 1 to 3 and moves the fault to DNS or the application" earns the mark.</div>
+
+<h4>Evidence and figures for Q5</h4>
+<ul>
+<li>Table 5.1: constraints and effects.</li>
+<li>Tables 5.2 to 5.5: the four fault tables.</li>
+<li>Figure 5.1: screenshot of <code>ipconfig /all</code> on a working and a failing client, side by side.</li>
+<li>Figure 5.2: screenshot of Event Viewer showing a spooler error.</li>
+<li>Figure 5.3: screenshot of the printer web interface showing IP configuration.</li>
+</ul>
+
+<h2>Question 6: Integrated network and system design <span class="m">12 marks</span></h2>
+
+<p><b>What is required:</b> an integrated design across seven buildings, showing wired and wireless infrastructure, main network devices, workstations, servers and services, access points and inter-building connections; a clearly labelled diagram; an explanation of how the design supports 800 mobile users while meeting performance, reliability, availability, compatibility and security.</p>
+
+<h3>Design principles to state first</h3>
+
+<ol>
+<li><b>Three-tier topology.</b> A collapsed core in the main building, a distribution layer per building, and an access layer per floor. The core carries inter-building and inter-VLAN traffic; the distribution aggregates the building; the access connects devices.</li>
+<li><b>Fibre ring between buildings.</b> Single-mode fibre, 12-core minimum, in a ring rather than a star, so one cut does not isolate a building. RSTP or MSTP prevents loops; OSPF or a routed core handles failover.</li>
+<li><b>Wireless as the primary access method for staff.</b> Wi-Fi 6 APs on 5 GHz and 6 GHz, PoE+ from the access switch, WPA3-Enterprise with RADIUS, 802.11k, v and r for fast roaming, one SSID for staff and one isolated SSID for guests.</li>
+<li><b>Wired as the deterministic path.</b> Printers, APs, the 15 workstations and any fixed device on Cat 6A, with 802.1X or MAC authentication bypass.</li>
+<li><b>Security by segmentation.</b> The VLAN plan from Q3, enforced by firewall rules between VLANs, not by hope.</li>
+<li><b>Services centralised and redundant.</b> Two domain controllers, DHCP failover, file and print server, RADIUS, backup NAS off the core switch, monitoring.</li>
+</ol>
+
+<h3>Diagram (draw this in draw.io or Visio, not by hand)</h3>
+
+<pre>
+                          [ Internet ]
+                               |
+                    [ ISP router / edge ]
+                               |
+                 +-------------+-------------+
+                 |                           |
+        [ Firewall A ]  =HA=  [ Firewall B ]        DMZ: web, VPN, mail relay
+                 |                           |
+                 +-------------+-------------+
+                               |
+                 +-------------+-------------+
+                 |                           |
+        [ Core switch A ]  ==  [ Core switch B ]    MLAG / stack, layer 3
+                 |                           |
+     +-----------+-----------+---------------+-----------+
+     |           |           |           |               |
+ [ Bldg 1 ]  [ Bldg 2 ]  [ Bldg 3 ]  [ Bldg 4 ]  ... [ Bldg 7 ]
+     |           |           |           |               |
+ [ Dist ]    [ Dist ]    [ Dist ]    [ Dist ]        [ Dist ]
+     |           |           |           |               |
+ [ Acc sw ]  [ Acc sw ]  [ Acc sw ]  [ Acc sw ]      [ Acc sw ]
+     |           |           |           |               |
+ [ APs ]     [ APs ]     [ APs ]     [ APs ]         [ APs ]
+     |           |           |           |               |
+ Laptops     Laptops     Laptops     Laptops         Laptops
+ Workstations (Bldg 1)                 Printers (Bldg 1, 2, 3)
+
+ Inter-building links: single-mode fibre ring, 10G, in the sequence
+ Bldg1 - Bldg2 - Bldg3 - Bldg4 - Bldg5 - Bldg6 - Bldg7 - Bldg1
+</pre>
+
+<div class="box"><b>Label the diagram properly.</b> Every device gets a name and an address (for example <code>CORE-A 10.20.10.11</code>). Every link gets a type and a speed (for example <code>SMF 10G</code>). Every VLAN appears at least once. A diagram with unlabelled clouds and unlabelled lines loses most of the 12 marks even if the topology is correct.</div>
+
+<h3>Scale argument for 800 mobile users</h3>
+
+<div class="tw"><table>
+<tr><th>Step</th><th>Working</th><th>Conclusion</th></tr>
+<tr><td>Device count</td><td>800 staff, 1.5 devices each on average</td><td>About 1200 concurrent devices at peak</td></tr>
+<tr><td>Devices per AP</td><td>Wi-Fi 6, 5 GHz and 6 GHz, target 30 to 35 concurrent devices per radio pair</td><td>About 40 APs for peak load, plus 15 percent spare, so 46 to 50 APs</td></tr>
+<tr><td>Distribution per building</td><td>50 APs across 7 buildings, so 7 to 8 APs per building on average</td><td>Two 24-port PoE+ access switches per building, one per floor pair, with 10G uplinks</td></tr>
+<tr><td>PoE budget</td><td>Wi-Fi 6 AP at about 25 W, 8 APs per switch</td><td>About 200 W of PoE per switch; a 370 W PoE budget leaves headroom for cameras and phones</td></tr>
+<tr><td>Uplink sizing</td><td>8 APs at 1 Gbps theoretical each, but airtime-limited in practice to about 300 Mbps each at peak</td><td>10G uplink per access switch is ample and removes the uplink as a bottleneck</td></tr>
+<tr><td>Core sizing</td><td>7 buildings at up to 10G each plus server traffic</td><td>40G or 100G core uplink if the budget allows; otherwise a 10G MLAG pair is sufficient for 1200 devices</td></tr>
+<tr><td>Internet bandwidth</td><td>Baseline from a peak-hour sample, then 20 Mbps per active user is unrealistic at 1200 devices</td><td>Size from the measured baseline, typically 1 to 2 Gbps for 1200 devices with content filtering and caching</td></tr>
+</table></div>
+
+<div class="box"><b>Why this table is worth a lot.</b> The question asks how the design "supports approximately 800 mobile users". The only way to answer is to show the arithmetic. A design that says "we will install 50 access points" without the working is a guess. A design that says "1200 devices divided by 35 per AP is 34 APs, plus spare is 40 to 50" is engineering.</div>
+
+<h4>Evidence and figures for Q6</h4>
+<ul>
+<li>Figure 6.1: the full labelled network diagram, full page, landscape if needed.</li>
+<li>Figure 6.2: a logical VLAN and routing diagram with firewall rules between zones.</li>
+<li>Figure 6.3: a photo or screenshot of the actual lab build you constructed (packet tracer, GNS3, EVE-NG, or real hardware) showing the topology running.</li>
+<li>Table 6.1: the scale argument above.</li>
+</ul>
+
+<h2>Question 7: Secure environment design and user training <span class="m">10 marks</span></h2>
+
+<p><b>What is required:</b> a security design guide for the university and StartUp Hub; explain how devices, operating systems, wireless, user accounts and data are protected; <b>implement at least three controls</b> with labelled screenshots; evaluate each control's effectiveness, purpose and contribution; include user-training measures.</p>
+
+<h3>Part 1: Threat model (short, but do it)</h3>
+
+<p>Name the threats before naming the controls. In this environment the realistic threats are: a stolen staff laptop with unencrypted data; a rogue device joining the staff wireless; credential theft through phishing; lateral movement from an infected workstation to the file server; an unpatched printer used as a pivot; and a shared local administrator password reused across 815 devices. Every control below answers one of those.</p>
+
+<h3>Part 2: Controls to implement (pick at least three, do them properly)</h3>
+
+<div class="tw"><table>
+<tr><th>#</th><th>Control</th><th>How to implement</th><th>What to screenshot</th><th>Threat it addresses</th></tr>
+<tr><td>1</td><td>Full disk encryption with BitLocker on Windows 11, LUKS on Ubuntu</td><td>Enable BitLocker with TPM and PIN, back up the recovery key to AD</td><td><code>manage-bde -status</code> showing Protection On; AD recovery key object</td><td>Stolen or lost laptop exposing data at rest</td></tr>
+<tr><td>2</td><td>WPA3-Enterprise with 802.1X and RADIUS</td><td>Configure NPS or FreeRADIUS; bind to AD; create a staff SSID using WPA3-Enterprise; test a client</td><td>NPS policy configuration; a client showing WPA3-Enterprise connected; the RADIUS log showing the authentication</td><td>Rogue devices joining the staff network; shared-key leakage</td></tr>
+<tr><td>3</td><td>Account lockout and password policy through Group Policy</td><td>Set lockout threshold, duration and reset counter; set minimum length; enable audit of logon events</td><td><code>gpedit.msc</code> or GPO console showing the settings; Event Viewer showing event 4625 for a failed logon and 4740 for a lockout</td><td>Brute force and password spraying</td></tr>
+<tr><td>4</td><td>VLAN segmentation with firewall rules between zones</td><td>Apply rules so GUEST can reach only the internet, IOT cannot reach STAFF, PRINT accepts only IPP from STAFF and SERVERS</td><td>Firewall rule table; a <code>ping</code> from GUEST to SERVERS failing and from STAFF to SERVERS succeeding</td><td>Lateral movement after a compromise</td></tr>
+<tr><td>5</td><td>Local administrator password management</td><td>Use LAPS or an equivalent to give every device a unique local admin password stored centrally</td><td>LAPS policy; the stored password object in AD</td><td>Pass-the-hash and lateral movement with a shared password</td></tr>
+<tr><td>6</td><td>Printer hardening</td><td>Change the default admin password, disable WSD and unused protocols, enable IPP over TLS, put printers on the PRINT VLAN, apply firmware updates</td><td>Printer web interface showing the changed password and disabled services; firmware version page</td><td>Printers as an unmanaged pivot point</td></tr>
+</table></div>
+
+<div class="box"><b>Three controls done fully beats six done shallowly.</b> The question asks for at least three. For each one, the evaluation must state purpose, effectiveness, and contribution to the whole. "We enabled BitLocker" is a step. "BitLocker with TPM and PIN means a stolen laptop yields no readable data without the PIN, which reduces the breach-notification burden and satisfies the data protection requirement" is an evaluation. Write the second sentence for every control.</div>
+
+<h3>Part 3: User training</h3>
+
+<div class="tw"><table>
+<tr><th>Topic</th><th>Content</th><th>Delivery and frequency</th><th>Measure of success</th></tr>
+<tr><td>Phishing recognition</td><td>How to spot a spoofed sender, check a link before clicking, and report a suspicious message in one click</td><td>Short online module at induction plus a quarterly simulated phishing campaign</td><td>Report rate above 70 percent, click rate below 5 percent, both trending better each quarter</td></tr>
+<tr><td>Password and MFA practice</td><td>Use a password manager, never reuse, enable MFA, never share credentials with a colleague</td><td>Induction module, reinforced at every policy change</td><td>MFA enrolment above 95 percent; helpdesk password reset volume falling</td></tr>
+<tr><td>Device handling</td><td>Lock the screen when leaving a desk, report a lost device immediately, never leave a laptop in a vehicle</td><td>One-page guide, poster in each building</td><td>Lost-device reports within one hour</td></tr>
+<tr><td>Data handling</td><td>Store university data only in approved locations, use the VPN off campus, never use personal cloud storage for student records</td><td>Induction plus annual refresher</td><td>Reduction in data stored outside approved systems found during audit</td></tr>
+<tr><td>Incident reporting</td><td>Who to call, what to send, how fast</td><td>Card in every building, intranet page</td><td>Mean time to report a suspected incident</td></tr>
+</table></div>
+
+<div class="box"><b>Training is part of the control set, not a footnote.</b> A WPA3 network with 802.1X still falls to a user who gives a one-time code to a caller. State this explicitly: technical controls raise the cost of an attack, and training lowers the chance that the weakest link is a person. One sentence in the evaluation, one table for the programme.</div>
+
+<h4>Evidence and figures for Q7</h4>
+<ul>
+<li>Figure 7.1: <code>manage-bde -status</code> showing BitLocker on.</li>
+<li>Figure 7.2: NPS or FreeRADIUS configuration and a successful 802.1X authentication in the log.</li>
+<li>Figure 7.3: Group Policy lockout settings and Event Viewer event 4740.</li>
+<li>Figure 7.4: firewall rules and the two <code>ping</code> tests proving segmentation.</li>
+<li>Figure 7.5: printer web page with hardened settings.</li>
+<li>Table 7.1: the training programme.</li>
+</ul>
+
+<h2>Question 8: Password policy design and justification <span class="m">10 marks</span></h2>
+
+<p><b>What is required:</b> a password policy covering normal user accounts, application and service accounts, IT administrator accounts, and administrator or root accounts; justify each rule; evaluate impact on security and usability for about 800 users; compare with a weak policy and explain how the proposed rules improve protection against common threats while remaining practical.</p>
+
+<h3>The four account classes</h3>
+
+<div class="tw"><table>
+<tr><th>Class</th><th>Rule</th><th>Justification</th><th>Usability impact</th></tr>
+<tr><td>Normal user (about 800)</td><td>Minimum 12 characters, no forced periodic change, no composition rules beyond a blocked list, MFA required, lockout after 5 failures for 15 minutes, screen lock after 10 minutes</td><td>Length resists brute force and offline cracking far more than complexity; forced rotation drives predictable patterns (Summer2026!) and incremental changes; a blocked list stops the passwords that appear in every breach corpus; MFA means a stolen password alone is not enough</td><td>Fewer forced changes means fewer helpdesk calls; a passphrase of three or four words is easy to remember; MFA adds one prompt per session, mitigated by trusted device and remember-me for a defined period</td></tr>
+<tr><td>Application and service accounts</td><td>Minimum 32 random characters, never interactive logon, unique per service, stored in a secrets vault or managed service account, rotated on a schedule and on staff change, least privilege, no domain-wide rights</td><td>No human remembers these, so length and randomness are free; interactive logon is the attack path, so removing it removes the path; unique per service stops one compromised credential being reused across systems; least privilege limits the blast radius</td><td>No usability cost to end users; some operational effort to rotate, which the vault automates</td></tr>
+<tr><td>IT administrator accounts</td><td>Separate admin account from the daily-use account, minimum 16 characters, MFA on every elevation, admin sessions from a hardened management host, just-in-time elevation with a time limit, no admin rights on the daily account</td><td>Separating the admin identity means a phishing attack on the user's mailbox does not yield domain rights; MFA on elevation blocks the pass-the-hash and stolen-ticket paths; JIT reduces the window in which a compromised admin session is useful</td><td>Two accounts to manage and an extra authentication step, which is the point; the cost is deliberate friction on privileged actions</td></tr>
+<tr><td>Administrator and root (local and domain)</td><td>Unique password per device, minimum 20 characters, vaulted and rotated automatically, break-glass account sealed and logged, root logon restricted to the console or a management network, all use audited</td><td>A shared local admin password is the single most exploited weakness in a Windows estate; unique per device stops lateral movement; the sealed break-glass account exists so that a real emergency does not tempt staff to weaken controls under pressure</td><td>Administrators cannot memorise every device password, so a vault is required, which is an operational change, not a user-facing one</td></tr>
+</table></div>
+
+<h3>Comparison with a weak policy</h3>
+
+<div class="tw"><table>
+<tr><th>Aspect</th><th>Weak policy</th><th>Proposed policy</th><th>Threat reduced and why</th></tr>
+<tr><td>Length</td><td>8 characters</td><td>12 for users, 16 to 32 for privileged and service</td><td>Brute force and offline cracking: each added character multiplies the search space, so length is the dominant factor</td></tr>
+<tr><td>Rotation</td><td>Forced every 60 or 90 days</td><td>No forced rotation; change on evidence of compromise only</td><td>Predictable patterns: forced rotation produces Password1, Password2, Summer2026 and similar, which are in every cracking wordlist. Removing rotation removes the predictable pattern.</td></tr>
+<tr><td>Complexity</td><td>Must contain upper, lower, digit and symbol</td><td>No composition rules; a blocked list of common and breached passwords instead</td><td>Composition rules produce P@ssw0rd, which passes the rule and falls in seconds; a blocked list stops the actual bad passwords</td></tr>
+<tr><td>Lockout</td><td>None, or 3 attempts with a permanent lock</td><td>5 attempts, 15-minute lockout, counter reset after 15 minutes</td><td>Brute force is slowed without creating a denial-of-service where an attacker locks out a known user permanently</td></tr>
+<tr><td>MFA</td><td>None</td><td>Required for users, administrators and elevation</td><td>Credential stuffing and phishing: a stolen password alone is no longer sufficient</td></tr>
+<tr><td>Privileged accounts</td><td>Same account for daily use and administration</td><td>Separate accounts, MFA, JIT elevation, unique local admin passwords</td><td>Lateral movement and pass-the-hash: compromising a mailbox no longer yields domain control</td></tr>
+<tr><td>Service accounts</td><td>Same as user accounts, shared by the team</td><td>32 random characters, vaulted, non-interactive, rotated</td><td>Kerberoasting and credential reuse: a service account compromise no longer unlocks other systems</td></tr>
+</table></div>
+
+<div class="box"><b>The usability evaluation the question asks for.</b> Weigh both sides. The proposed policy removes forced rotation, which <b>reduces</b> helpdesk load and user frustration, and adds MFA and a vault, which <b>increases</b> the first-week effort and the support burden during rollout. Say so. Then state the mitigation: phased rollout by building, a password manager provided to all staff, self-service reset, and a communications plan. An answer that only praises the policy is not an evaluation. The examiner wants the trade-off named, quantified where possible, and mitigated.</div>
+
+<div class="box"><b>Where to put the policy in practice.</b> Mention the technical enforcement: Group Policy for Windows, PAM and <code>pwquality</code> for Ubuntu, a password filter or Azure AD Password Protection for the blocked list, and the vault for service and local admin accounts. Naming the enforcement mechanism shows the policy is implementable, not aspirational.</div>
+
+<h4>Evidence and figures for Q8</h4>
+<ul>
+<li>Table 8.1: the four account classes and rules.</li>
+<li>Table 8.2: the weak-policy comparison.</li>
+<li>Figure 8.1: Group Policy password and lockout settings.</li>
+<li>Figure 8.2: Event Viewer event 4740 (account locked out) generated by your own test.</li>
+<li>Figure 8.3: <code>/etc/security/pwquality.conf</code> or the PAM configuration on Ubuntu showing the enforced minimum length.</li>
+</ul>
+
+<h2>Harvard referencing: the 10 marks that are easiest to win and most often lost</h2>
+
+<p><b>Requirement:</b> at least 8 sources including books, journals and industry white papers, with in-text citations and a matching reference list.</p>
+
+<h3>What the examiner checks</h3>
+
+<ol>
+<li>Every in-text citation appears in the reference list, and nothing in the list is uncited.</li>
+<li>At least one <b>book</b>, at least one <b>journal article</b> and at least one <b>industry white paper</b> are present, because the paper names all three.</li>
+<li>Author, year, title, publisher or journal, and for online sources the access date, are all present.</li>
+<li>Citations appear where the claim is made, not only at the end of a paragraph.</li>
+<li>Standards are cited as standards (IEEE 802.11ax, ISO/IEC 27001, TIA-568).</li>
+</ol>
+
+<h3>Reference list you can build from (verify each before you use it)</h3>
+
+<p>These are the kinds of sources this paper expects. Check the edition, year and URL yourself, and cite only what you have actually consulted.</p>
+
+<div class="tw"><table>
+<tr><th>#</th><th>Type</th><th>Reference</th><th>Where to cite it</th></tr>
+<tr><td>1</td><td>Book</td><td>Tanenbaum, A.S. and Bos, H. (2015) <i>Modern Operating Systems</i>. 4th ed. Boston: Pearson.</td><td>Q1 operating systems, Q3 OS comparison</td></tr>
+<tr><td>2</td><td>Book</td><td>Stallings, W. (2020) <i>Data and Computer Communications</i>. 11th ed. Harlow: Pearson.</td><td>Q1 network communication, Q3 protocols</td></tr>
+<tr><td>3</td><td>Book</td><td>Silberschatz, A., Galvin, P.B. and Gagne, G. (2018) <i>Operating System Concepts</i>. 10th ed. Hoboken: Wiley.</td><td>Q3, Q4 process and memory behaviour under load</td></tr>
+<tr><td>4</td><td>Standard</td><td>IEEE (2021) <i>IEEE Standard for Information Technology, Telecommunications and Information Exchange between Systems, Local and Metropolitan Area Networks, Part 11: Wireless LAN Medium Access Control and Physical Layer Specifications, Amendment 1: Enhancements for High-Efficiency WLAN</i>. IEEE 802.11ax-2021. New York: IEEE.</td><td>Q2 Wi-Fi 6 justification, Q3 protocols</td></tr>
+<tr><td>5</td><td>White paper</td><td>Cisco (2023) <i>Wi-Fi 6 and Wi-Fi 6E: Technical White Paper</i>. San Jose: Cisco Systems.</td><td>Q2 AP comparison, Q4 performance</td></tr>
+<tr><td>6</td><td>Guideline</td><td>NIST (2017) <i>Digital Identity Guidelines: Authentication and Lifecycle Management</i>. NIST Special Publication 800-63B. Gaithersburg: National Institute of Standards and Technology.</td><td>Q8 password policy, no forced rotation, length over complexity</td></tr>
+<tr><td>7</td><td>Guideline</td><td>NCSC (2022) <i>Password Policy Guidance</i>. London: National Cyber Security Centre.</td><td>Q8 weak-policy comparison</td></tr>
+<tr><td>8</td><td>Guideline</td><td>OWASP (2023) <i>Authentication Cheat Sheet</i>. OWASP Foundation.</td><td>Q7, Q8 account and MFA controls</td></tr>
+<tr><td>9</td><td>Standard</td><td>ISO/IEC (2022) <i>ISO/IEC 27001:2022 Information Security, Cybersecurity and Privacy Protection, Information Security Management Systems, Requirements</i>. Geneva: ISO.</td><td>Q7 security design, Q5 data protection constraint</td></tr>
+<tr><td>10</td><td>Vendor documentation</td><td>Canonical (2024) <i>Ubuntu 24.04 LTS Release Notes</i>. London: Canonical Ltd.</td><td>Q3 Ubuntu evaluation</td></tr>
+<tr><td>11</td><td>Vendor documentation</td><td>Google (2024) <i>ChromeOS Flex: Deployment and Management Guide</i>. Mountain View: Google LLC.</td><td>Q3 ChromeOS Flex evaluation</td></tr>
+<tr><td>12</td><td>Vendor documentation</td><td>Microsoft (2024) <i>Windows 11 Security Book</i>. Redmond: Microsoft Corporation.</td><td>Q3, Q7 BitLocker, Credential Guard</td></tr>
+<tr><td>13</td><td>Standard</td><td>TIA (2016) <i>TIA-568: Commercial Building Telecommunications Cabling Standard</i>. Arlington: Telecommunications Industry Association.</td><td>Q2 cabling, Q5 the 100 m limit</td></tr>
+<tr><td>14</td><td>White paper</td><td>Cisco (2020) <i>Cisco Annual Internet Report, 2018 to 2023</i>. San Jose: Cisco Systems.</td><td>Q1, Q4 growth in device density</td></tr>
+</table></div>
+
+<div class="box stop"><b>Do not fabricate a reference.</b> A reference that cannot be found is worse than one fewer reference, because it is treated as academic misconduct. Open each source, read enough to know what it says, and cite the part you actually used. The list above is a starting point for the kind of source each question expects, not a substitute for your own reading.</div>
+
+<h2>Formatting and presentation: the other 10 marks</h2>
+
+<div class="tw"><table>
+<tr><th>Requirement</th><th>How to meet it</th><th>How it is checked</th></tr>
+<tr><td>Times New Roman 12</td><td>Set the style, not just the current selection, so pasted text inherits it</td><td>Marker selects a paragraph and reads the font box</td></tr>
+<tr><td>Justified text</td><td>Body paragraphs justified; headings left aligned; code and tables left aligned or centred</td><td>Visual check on every page</td></tr>
+<tr><td>Line spacing 1.15</td><td>Set in the normal style, not per paragraph</td><td>Paragraph dialog</td></tr>
+<tr><td>Table of contents</td><td>Use automatic heading styles, then insert an automatic TOC, then update fields before export to PDF</td><td>A TOC with page numbers that match the document</td></tr>
+<tr><td>Page numbers</td><td>Footer, centre or right; start numbering at 1 after the cover page</td><td>Every page after the cover</td></tr>
+<tr><td>Cover page</td><td>The six elements in instruction 2, nothing missing</td><td>First page</td></tr>
+<tr><td>Labelled figures</td><td>Figure number, caption, source line; a sentence in the body that refers to it</td><td>Each figure is called out in the text ("Figure 6.1 shows")</td></tr>
+<tr><td>Labelled tables</td><td>Table number, caption above the table, source line below</td><td>Same call-out rule</td></tr>
+<tr><td>Grammar and structure</td><td>Proofread, then read it aloud, then use a spell checker set to UK or your institution's variant, consistently</td><td>Whole document</td></tr>
+<tr><td>Professional structure</td><td>The headings in the scaffolding above; consistent numbering; no orphan headings at the bottom of a page</td><td>Whole document</td></tr>
+</table></div>
+
+<h2>Screenshot discipline</h2>
+
+<p>The paper says "screenshots for all practical work where applicable" and marks them under formatting and under Q7. Every screenshot must be labelled, referred to in the text, and show enough context that a marker can tell what it is without asking.</p>
+
+<div class="tw"><table>
+<tr><th>Good screenshot</th><th>Bad screenshot</th></tr>
+<tr><td>Full window or full screen, with the machine name, the date and the account visible; a caption that states what is being proved; a sentence in the body that refers to the figure number</td><td>A cropped image of one dialog box with no context; a photograph of a screen with reflections; retyped output; a screenshot with no caption</td></tr>
+<tr><td>Shows the before and after when the point is a change (BitLocker off, then on; ping failing, then succeeding)</td><td>Shows only the end state, so the marker cannot see what changed</td></tr>
+<tr><td>Includes the command and its output when the evidence is a command line</td><td>Shows only the output, so the marker cannot tell what produced it</td></tr>
+</table></div>
+
+<div class="box"><b>Number every figure consistently.</b> Figure 2.1, Figure 2.2, Figure 6.1 and so on, per question. If the marker cannot find the figure your text mentions, the evidence is not counted. Keep a table of figures at the front so nothing is orphaned.</div>
+
+<h2>Common mistakes that cost a full band</h2>
+
+<div class="tw"><table>
+<tr><th>Mistake</th><th>Where it appears</th><th>Fix</th></tr>
+<tr><td>Describing hardware generically with no recommendation</td><td>Q2</td><td>For each component, end with "therefore I recommend X because..." and cite the four criteria</td></tr>
+<tr><td>Recommending one OS for everything without acknowledging the server tier</td><td>Q3</td><td>Recommend Windows 11 Pro as primary, Ubuntu for servers, ChromeOS Flex for kiosks, and justify the primary explicitly</td></tr>
+<tr><td>Non-functional requirements asserted without metrics</td><td>Q4</td><td>Every quality gets a target number and a measurement method</td></tr>
+<tr><td>One cause per fault</td><td>Q5</td><td>The paper says at least two. Give two or three per symptom.</td></tr>
+<tr><td>Unlabelled network diagram</td><td>Q6</td><td>Device names, addresses, link types and speeds, VLANs, on the diagram itself</td></tr>
+<tr><td>Security controls claimed but not implemented</td><td>Q7</td><td>Three controls, each with a screenshot showing it on, plus the evaluation sentence</td></tr>
+<tr><td>Password policy with rules but no justification per class</td><td>Q8</td><td>Each of the four classes gets its own justification and its own usability note</td></tr>
+<tr><td>In-text citations that do not match the reference list</td><td>Harvard</td><td>Generate the list from the citations, or the citations from the list, never both separately</td></tr>
+<tr><td>Cover page missing an element</td><td>Formatting</td><td>Use the six-element checklist on the cover template</td></tr>
+<tr><td>Screenshots cropped, unlabelled or unreferenced</td><td>Formatting, Q7</td><td>Full window, caption, figure number, and a sentence in the body that names the figure</td></tr>
+</table></div>
+
+<h2>Before you submit</h2>
+
+<ol>
+<li>Every question has its number, its heading, and at least one table or figure.</li>
+<li>Every figure and table is numbered, captioned, and referred to in the text.</li>
+<li>Every practical claim in Q2, Q3, Q7 and Q8 has a screenshot beside it.</li>
+<li>Every in-text citation is in the reference list, and the list has at least 8 sources including a book, a journal or conference paper, and a white paper.</li>
+<li>Cover page has the six required elements.</li>
+<li>Times New Roman 12, justified, 1.15 spacing, throughout.</li>
+<li>Table of contents with page numbers, updated before export.</li>
+<li>Page numbers on every page after the cover.</li>
+<li>Exported to PDF, opened again, and checked page by page for broken tables and missing images.</li>
+<li>Submitted through Turnitin before 7 November 2026. Not by email.</li>
+</ol>
+
+<div class="box"><b>The last thing to check.</b> Read your own Q6 diagram and your own Q3 table side by side. Do the VLANs in the diagram match the IP plan? Does the hardware in Q2 support the OS in Q3? Does the security in Q7 use the segmentation in Q6? A report that agrees with itself reads as a designed solution. A report where each answer stands alone reads as eight separate assignments stapled together, and that is the difference between a pass and a distinction.</div>
+
+<footer>CRE8LEARN INSTITUTE | C5-OSH-11 Operating Systems and Hardware | Full Worked Reference<br>Teboho Mpholo (Mr.), Founder and Lead Instructor</footer>
+</div>
+</body>
+</html>
